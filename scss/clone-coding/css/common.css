@@ -1,0 +1,335 @@
+@charset "UTF-8";
+/* v2.0 | 20110126
+  http://meyerweb.com/eric/tools/css/reset/ 
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /* font: inherit; */
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button {
+  border: none;
+  padding: 0px;
+  background: transparent;
+}
+
+/*font*/
+/*color*/
+/*media*/
+@font-face {
+  font-family: "genesis-head-light";
+  src: url("../../fonts/GenesisSansHeadKRLight.eot");
+  src: url("../../fonts/GenesisSansHeadKRLight.eot#iefix") format("embedeopentype"), url("../../fonts/GenesisSansHeadKRLight.woff") format("woff"), url("../../fonts/GenesisSansHeadKRLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "genesis-head";
+  src: url("../../fonts/GenesisSansHeadKRRegular.eot");
+  src: url("../../fonts/GenesisSansHeadKRRegular.eot#iefix") format("embedeopentype"), url("../../fonts/GenesisSansHeadKRRegular.woff") format("woff"), url("../../fonts/GenesisSansHeadKRRegular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "genesis-text";
+  src: url("../../fonts/GenesisSansTextKRRegular.eot");
+  src: url("../../fonts/GenesisSansTextKRRegular.eot#iefix") format("embedeopentype"), url("../../GenesisSansTextKRRegular.woff") format("woff"), url("../../GenesisSansTextKRRegular.woff2") format("woff2");
+}
+/*
+선언된 mixin안에 새로운 스타일을 적용할때 사용하는 선언문
+@content를 넣게 되면 기존 mixin이 가지고 있는 스타일 외에 선택자나 속성등을 새로 추가해서
+작성할 수 있다.
+*/
+.inner {
+  width: auto;
+  height: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding: 0px 140px;
+}
+
+.blind {
+  /*
+  대체 텍스트 기법
+  display : none = 화면에서 사라지지만 리더기에서도 읽히지 않는다.
+  position : absolute; left : -9999px// 과부화를 줄 수 있다.
+  text-indent : -9999px  과부하를 줄 수 있다.
+  */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  /*영역에 1px씩 주는 이유는 컨텐츠를 인식할 수 있게 최소한의 크기*/
+  overflow: hidden;
+  visibility: hidden;
+  margin: -1px;
+  -webkit-clip-path: inset(-50%);
+          clip-path: inset(-50%);
+}
+
+body, html {
+  font-size: 16px;
+  font-family: "genesis-text", sans-serif;
+  line-height: 1;
+  background: #111111;
+  letter-spacing: -0.5px;
+}
+
+.skip-menu li a {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1px;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  color: #ffffff;
+  text-align: center;
+  z-index: 9999;
+  background: #111111;
+}
+.skip-menu li a:focus {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+@media screen and (max-width: 1600px) {
+  .inner {
+    padding: 0px 100px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .inner {
+    padding: 0px 75px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .inner {
+    padding: 0px 20px;
+  }
+}
+.h-container {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  background: #111111;
+}
+.h-container .inner {
+  display: flex;
+  align-items: start;
+}
+
+.logo {
+  width: 125px;
+  height: 30px;
+  margin-right: 70px;
+}
+.logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../../images/logo.png") no-repeat center center/100%;
+}
+
+.gnb-wrapper {
+  height: 100%;
+}
+.gnb-wrapper .gnb {
+  display: flex;
+  gap: 60px;
+  height: 100%;
+}
+.gnb-wrapper .gnb a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #bbbbbb;
+  transition: 300ms;
+  font-size: 15px;
+  font-family: "genesis-head", sans-serif;
+}
+.gnb-wrapper .gnb a:hover {
+  color: #ffffff;
+}
+
+.suppot-menu-wrapper {
+  margin-left: auto;
+  display: flex;
+  height: 100%;
+  gap: 30px;
+}
+.suppot-menu-wrapper > a {
+  color: #bbbbbb;
+  transition: 300ms;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 14px;
+}
+.suppot-menu-wrapper > a:hover {
+  color: #ffffff;
+}
+.suppot-menu-wrapper > a img {
+  width: 17px;
+  display: none;
+}
+.suppot-menu-wrapper .search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+}
+.suppot-menu-wrapper .sitemap-wrapper {
+  width: 66px;
+  height: 100%;
+  padding: 0px 22px;
+  box-sizing: border-box;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.suppot-menu-wrapper .sitemap-wrapper .ham-btn {
+  width: 100%;
+  height: 13px;
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+}
+.suppot-menu-wrapper .sitemap-wrapper .ham-btn span {
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  display: block;
+  position: absolute;
+  left: 0px;
+  transition: 300ms;
+}
+.suppot-menu-wrapper .sitemap-wrapper .ham-btn .line01 {
+  top: 0px;
+}
+.suppot-menu-wrapper .sitemap-wrapper .ham-btn .line02 {
+  top: 100%;
+}
+.suppot-menu-wrapper .sitemap-wrapper:hover .ham-btn .line01 {
+  transform: rotate(45deg);
+  top: 50%;
+}
+.suppot-menu-wrapper .sitemap-wrapper:hover .ham-btn .line02 {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+.suppot-menu-wrapper .sitemap-wrapper:before {
+  content: "";
+  width: 1px;
+  height: 20px;
+  background: rgb(255, 255, 255);
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1600px) {
+  .logo {
+    margin-right: 50px;
+    width: 100px;
+  }
+  .gnb-wrapper .gnb {
+    gap: 36px;
+  }
+  .gnb-wrapper .gnb li a {
+    font-size: 14px;
+  }
+  .suppot-menu-wrapper {
+    gap: 26px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .suppot-menu-wrapper > a .text {
+    display: none;
+  }
+  .suppot-menu-wrapper > a img {
+    display: block;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .h-container {
+    height: 60px;
+  }
+  .logo {
+    width: 86px;
+  }
+  .gnb-wrapper {
+    display: none;
+  }
+  .suppot-menu-wrapper {
+    gap: 0px;
+  }
+  .suppot-menu-wrapper .suppot-link,
+  .suppot-menu-wrapper .search-btn {
+    display: none;
+  }
+  .suppot-menu-wrapper .sitemap-wrapper:before {
+    display: none;
+  }
+}
