@@ -1238,4 +1238,290 @@
         }
     }
 }
+//event
+.sns-wrapper{
+    padding: 160px 0px 120px;
+    background: $white-color;
+    .title-box{
+        text-align: center;
+        margin-bottom: 80px;
+        .sub-title{
+            color: $black;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-family: $title-light;
+        }
+        .title{
+            color: $black;
+            font-size: 54px;
+            font-family: $title-light;
+            font-weight: normal;
+        }
+    }
+    .sns-list{
+        display: flex;
+        gap: 8px;
+        li{
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            .sns-img{
+                position: relative;
+                top: 0px;
+                left: 0px;
+                padding-top: 100%;
+                overflow: hidden;
+                img{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    transition: 600ms;
+
+                }
+            }
+            &:hover .sns-img img{
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+            &:after{
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                display: block;
+                background: rgba(0,0,0,0);
+                transition: 300ms;
+            }
+            &:hover:after{
+                background: rgba(0,0,0,0.6);
+            }
+            .text-box{
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                padding: 60px;
+                padding-top : 0px;
+                box-sizing: border-box;
+                z-index: 3;
+                transition: 600ms;
+                opacity: 0;
+                >.bx{
+                    font-size: 30px;
+                    color: $white-color;
+                    position: absolute;
+                    top: -16px;
+                    left: 30px;
+                }
+                .text{
+                    color: $white-color;
+                    @include ellips(14px,2);
+                    margin-bottom: 12px;
+                }
+                .link-text-btn{
+                    @include link-text-btn($white-color, 'v2')
+                }
+            }
+            &:hover .text-box{
+                opacity: 1;
+            }
+        }
+    }
+    .dic-btn{
+        border-color: $black;
+        width: 240px;
+        height: 56px;
+        color: $black;
+        margin: 60px auto 0px;
+        justify-content: space-between;
+        padding: 0px 18px 0px 28px;
+        &:after{
+            background-color: $black;
+        }
+        &:hover{
+            color: $white-color;
+        }
+    }
+}
+@include laptop{
+    .sns-wrapper{
+        padding: 140px 0px 100px 0px
+    }
+}
+@include laptop02{
+    .sns-wrapper{
+        padding-top: 120px;
+    }
+}
+
+@include tablet{
+    .sns-wrapper{
+        .sns-list{
+            flex-wrap: wrap;
+            li{
+                width: calc(50% - 4px);
+                .sns-img{
+                    padding-top:39.7%
+                }
+                &:first-of-type{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    .sns-wrapper{
+        padding: 100px 0px 80px 0px;
+        .title-box{
+            margin-bottom: 40px;
+            .sub-title{
+                font-size: 18px;
+                margin-bottom: 18px;
+            }
+            .title{
+                font-size: 36px;
+            }
+        }
+        .sns-list{
+            gap: 0px;
+            li{
+                width: 100%;
+                .sns-img{
+                    padding-top: 56%;
+                }
+                &:first-of-type .sns-img{
+                    padding-top: 100%;
+                }
+                &:after{
+                    display: none;
+                }
+                .text-box{
+                    position: relative;
+                    /*relative도 가능*/
+                    opacity: 1;
+                    padding: 20px 50px 40px 30px;
+                    .text{
+                        color: $black;
+                    }
+                    >.bx{
+                        top: -40px;
+                        left: 30px;
+                    }
+                    .link-text-btn{
+                        @include link-text-btn($black, 'v2')
+                    }
+                }
+            }
+        }
+        .dic-btn{
+            width: calc(100% - 60px);
+            margin-top: 0px;
+        }
+    }
+}
+//SNS
+
+.more-wrapper{
+    background: $white-color;
+    padding-bottom: 120px;
+    .title-box{
+        margin-bottom: 40px;
+        text-align: center;
+        .title{
+            font-size: 30px;
+            font-family: $title;
+            font-weight: 500;
+        }
+    }
+    .more-list{
+        display: flex;
+        gap: 40px;
+        .more-img{
+            margin-bottom: 30px;
+        }
+        .text-box{
+            .title{
+                font-size: 18px;
+                font-weight: 500;
+                font-family: $title;
+            }
+            .text{
+                font-size: 16px;
+                margin: 24px 0px;
+            }
+            .link-text-btn{
+                @include link-text-btn($black, 'v2');
+            }
+        }
+    }
+}
+
+@include laptop{
+    .more-wrapper{
+        .more-list{
+            .text-box{
+                .title{
+                    font-size: 16px;
+                }
+                .text{
+                    font-size: 14px;
+                    margin: 30px 0px;
+                }
+                .link-text-btn{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+@include laptop02{
+    .more-wrapper{
+        padding-bottom: 100px;
+        .title-box{
+            .title{
+                font-size: 28px;
+            }
+        }
+    }
+}
+@include tablet{
+    .more-wrapper{
+        .title-box{
+            margin-bottom: 120px;
+        }
+        .more-list{
+            li{
+                .text-box{
+                    .title{
+                        font-size: 18px;
+                    }
+                    .text{
+                        font-size: 16px;
+                        margin: 16 px 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    .more-wrapper{
+        padding: 0px;
+        .title-box{
+            margin-bottom: 20px;
+        }
+        .more-list{
+            flex-direction: column;
+            gap: 0px;
+            li{
+                padding-bottom: 70px;
+            }
+        }
+    }
+}
 
