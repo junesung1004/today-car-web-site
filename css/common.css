@@ -102,11 +102,11 @@ button {
 
 .blind {
   /*
-  대체 텍스트 기법
-  display : none = 화면에서 사라지지만 리더기에서도 읽히지 않는다.
-  position : absolute; left : -9999px// 과부화를 줄 수 있다.
-  text-indent : -9999px  과부하를 줄 수 있다.
-  */
+    대체 텍스트 기법
+    display : none = 화면에서 사라지지만 리더기에서도 읽히지 않는다.
+    position : absolute; left : -9999px// 과부화를 줄 수 있다.
+    text-indent : -9999px  과부하를 줄 수 있다.
+    */
   position: absolute;
   width: 1px;
   height: 1px;
@@ -118,7 +118,8 @@ button {
           clip-path: inset(-50%);
 }
 
-body, html {
+body,
+html {
   font-size: 16px;
   font-family: "genesis-text", sans-serif;
   line-height: 1;
@@ -185,6 +186,22 @@ body, html {
 }
 .dic-btn:hover {
   color: #000000;
+}
+
+.chat-wrapper {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  right: 40px;
+  bottom: 40px;
+  z-index: 9999;
+}
+.chat-wrapper .chat-btn {
+  background: url(../../images/g_fab_hovered_202304.svg) no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1600px) {
@@ -428,6 +445,212 @@ body, html {
   gap: 12px;
   cursor: pointer;
 }
+.f-container .f-notice {
+  padding: 30px 0;
+}
+.f-container .f-notice .inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.f-container .f-notice .inner .f-notice-item {
+  width: 100%;
+}
+.f-container .f-notice .inner .f-notice-item a {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+}
+.f-container .f-notice .inner .f-notice-control {
+  display: flex;
+  gap: 14px;
+}
+.f-container .f-notice .inner .f-notice-control button {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 24px;
+}
+.f-container .f-sitemap {
+  background-color: #141414;
+  padding: 90px 0;
+}
+.f-container .f-sitemap .f-sitemap-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+}
+.f-container .f-sitemap .f-sitemap-list .item {
+  width: 25%;
+}
+.f-container .f-sitemap .f-sitemap-list .item strong {
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-size: 16px;
+  display: block;
+}
+.f-container .f-sitemap .f-sitemap-list .item strong a {
+  color: #ffffff;
+}
+.f-container .f-sitemap .f-sitemap-list .item .f-sitemap-btn {
+  display: none;
+  width: 100%;
+  color: #ffffff;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border-top: solid 1px rgba(255, 255, 255, 0.6);
+  align-items: center;
+  cursor: pointer;
+}
+.f-container .f-sitemap .f-sitemap-list .item .sub-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.f-container .f-sitemap .f-sitemap-list .item .sub-menu li a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  transition: 300ms;
+}
+.f-container .f-sitemap .f-sitemap-list .item .sub-menu li:hover a {
+  color: rgb(255, 255, 255);
+}
+.f-container .f-company {
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+.f-container .f-company .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.f-container .f-company .inner .f-company-list {
+  display: flex;
+  align-items: center;
+}
+.f-container .f-company .inner .f-company-list li {
+  padding: 0 24px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.f-container .f-company .inner .f-company-list li:first-of-type {
+  padding-left: 0;
+}
+.f-container .f-company .inner .f-company-list li:last-of-type {
+  padding-right: 0;
+}
+.f-container .f-company .inner .f-company-list li::after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 5px;
+  right: 0;
+  display: block;
+}
+.f-container .f-company .inner .f-company-list li:last-of-type::after {
+  display: none;
+}
+.f-container .f-company .inner .f-company-list li a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.f-container .f-company .inner .f-company-list li a:hover {
+  color: rgb(255, 255, 255);
+}
+.f-container .f-company .inner .f-company-list li.privacy a {
+  color: #c36f51;
+}
+.f-container .f-company .inner .f-company-list li.privacy a:hover {
+  color: #c36f51;
+}
+.f-container .f-company .inner .f-company-sns {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 20px;
+}
+.f-container .f-company .inner .f-company-sns li a {
+  font-size: 30px;
+  color: #ffffff;
+  padding: 5px;
+}
+.f-container .f-genesis {
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+.f-container .f-genesis .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.f-container .f-genesis .inner .f-genesis-list {
+  display: flex;
+  gap: 24px 48px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.f-container .f-genesis .inner .f-genesis-list li a {
+  display: flex;
+  color: rgba(255, 255, 255, 0.7);
+  align-items: center;
+  font-size: 14px;
+  gap: 10px;
+}
+.f-container .f-genesis .inner .f-genesis-list li a .bx {
+  font-size: 16px;
+}
+.f-container .f-genesis .inner .f-genesis-list li a:hover {
+  color: rgb(255, 255, 255);
+}
+.f-container .f-genesis .inner .f-lang {
+  display: flex;
+}
+.f-container .f-genesis .inner .f-lang a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 36px;
+  font-size: 14px;
+}
+.f-container .f-genesis .inner .f-lang a.eng {
+  color: #ffffff;
+  background-color: #222222;
+}
+.f-container .f-genesis .inner .f-lang a.kor {
+  color: #000000;
+  background-color: #ffffff;
+}
+.f-container .f-info {
+  padding: 50px 0;
+}
+.f-container .f-info .f-info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.f-container .f-info .f-info-item .info-copy {
+  color: #cccccc;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 56px;
+  background: url(../../images/footer-logo.png) no-repeat center top/132px;
+  line-height: 1.5;
+}
+.f-container .f-info .f-info-item .f-mark {
+  width: 80px;
+  height: 58px;
+  position: absolute;
+  top: -20px;
+  right: 0;
+}
 
 @media screen and (max-width: 1600px) {
   .f-container .f-sns .inner .f-sns-item span {
@@ -435,6 +658,32 @@ body, html {
   }
   .f-container .f-sns .inner .f-top-btn {
     font-size: 14px;
+  }
+  .f-container .f-sns .inner .f-sitemap {
+    padding: 100px 0;
+  }
+  .f-container .f-sns .inner .f-sitemap .f-sitemap-list strong {
+    font-size: 14px;
+  }
+  .f-container .f-sns .inner .f-sitemap .f-sitemap-list .sub-menu li a {
+    font-size: 12px;
+  }
+  .f-container .f-sns .inner .f-company .inner .f-company-list li a {
+    font-size: 12px;
+  }
+  .f-container .f-sns .inner .f-company .inner .f-company-sns a {
+    font-size: 24px;
+  }
+  .f-container .f-sns .inner .f-genesis .inner .f-genesis-list {
+    width: 630px;
+  }
+  .f-container .f-sns .inner .f-genesis .inner .f-genesis-list li a {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .f-container .f-company .inner .f-company-list li {
+    padding: 0 8px;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -446,6 +695,96 @@ body, html {
   }
   .f-container .f-sns .inner .f-top-btn {
     font-size: 16px;
+  }
+  .f-container .f-notice {
+    padding-top: 60px;
+  }
+  .f-container .f-notice .inner {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .f-container .f-notice .inner .f-notice-item a {
+    font-size: 15px;
+  }
+  .f-container .f-sitemap {
+    padding: 0;
+  }
+  .f-container .f-sitemap .inner {
+    padding: 0;
+  }
+  .f-container .f-sitemap .f-sitemap-list {
+    flex-direction: column;
+    gap: 0;
+  }
+  .f-container .f-sitemap .f-sitemap-list .item {
+    width: 100%;
+  }
+  .f-container .f-sitemap .f-sitemap-list .item strong,
+  .f-container .f-sitemap .f-sitemap-list .item .sub-menu {
+    display: none;
+  }
+  .f-container .f-sitemap .f-sitemap-list .item .f-sitemap-btn {
+    display: flex;
+    font-size: 14px;
+  }
+  .f-container .f-sitemap .f-sitemap-list .item .f-sitemap-btn .bx {
+    font-size: 20px;
+  }
+  .f-container .f-company {
+    border-bottom: none;
+  }
+  .f-container .f-company .inner {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .f-container .f-company .inner .f-company-list {
+    flex-wrap: wrap;
+    width: 300px;
+    gap: 24px 0;
+    justify-content: center;
+  }
+  .f-container .f-company .inner .f-company-list li::after {
+    height: 10px;
+  }
+  .f-container .f-company .inner .f-company-list li a {
+    font-size: 11px;
+  }
+  .f-container .f-company .inner .f-company-sns li a {
+    font-size: 30px;
+  }
+  .f-container .f-genesis .inner {
+    flex-direction: column;
+    gap: 45px;
+  }
+  .f-container .f-genesis .inner .f-genesis-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .f-container .f-genesis .inner .f-genesis-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    width: 100%;
+    padding: 24px 10px 16px;
+    box-sizing: border-box;
+  }
+  .f-container .f-genesis .inner .f-genesis-list li a {
+    justify-content: space-between;
+  }
+  .f-container .f-genesis .inner .f-genesis-list li a .bx {
+    order: 1;
+  }
+  .f-container .f-genesis .inner .f-lang {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  .f-container .f-genesis .inner .f-lang a {
+    width: 50%;
+    height: 50px;
+  }
+  .f-container .f-info .f-info-item .f-mark {
+    display: none;
   }
 }
 .container {
